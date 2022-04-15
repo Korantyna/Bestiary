@@ -1,0 +1,116 @@
+﻿<UserControl
+    x:Class="Bestiary.Views.MonsterDetailsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:gui="http://bestiary.pl/2022/gui"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:resources="clr-namespace:Bestiary.Properties.Views.MonsterDetailsView"
+    d:Background="{StaticResource View.Background}"
+    d:DesignHeight="386.75"
+    d:DesignWidth="980"
+    d:FontFamily="IM FELL English"
+    d:FontSize="22"
+    d:Foreground="{StaticResource View.Foreground}"
+    gui:ViewProperties.IsBusy="{Binding IsBusy}"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    Style="{DynamicResource ViewStyle}"
+    mc:Ignorable="d">
+
+    <Grid Margin="40,20">
+        <Grid VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" DataContext="{Binding Monster, UpdateSourceTrigger=PropertyChanged}">
+                <Border BorderBrush="Black" BorderThickness="0,0,0,2">
+                    <TextBlock FontSize="30" Text="{Binding Name, FallbackValue={x:Static resources:MonsterDetailsView.Monster}}" />
+                </Border>
+                <TextBlock FontSize="24" Text="{Binding Type, FallbackValue={x:Static resources:MonsterDetailsView.Type}}" />
+                <TextBlock Text="{Binding Subtype, FallbackValue={x:Static resources:MonsterDetailsView.Subtype}}" />
+            </StackPanel>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <ScrollViewer
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="0,10,0,0"
+                    Padding="0,0,10,0"
+                    VerticalScrollBarVisibility="Auto">
+                    <TextBlock
+                        FontStyle="Italic"
+                        Text="{Binding Monster.Description, FallbackValue={x:Static resources:MonsterDetailsView.Description}}"
+                        TextWrapping="Wrap" />
+                </ScrollViewer>
+
+                <StackPanel
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    MinWidth="200"
+                    HorizontalAlignment="Right"
+                    DataContext="{Binding Monster, UpdateSourceTrigger=PropertyChanged}">
+                    <StackPanel Margin="25,10" Orientation="Horizontal">
+                        <TextBlock Margin="0,0,5,0" Text="{x:Static resources:MonsterDetailsView.ArmorClass}" />
+                        <TextBlock Text="{Binding ArmorClass, FallbackValue='-'}" />
+                    </StackPanel>
+                    <StackPanel Margin="25,10" Orientation="Horizontal">
+                        <TextBlock Margin="0,0,5,0" Text="{x:Static resources:MonsterDetailsView.HitPoints}" />
+                        <TextBlock Text="{Binding HitPoints, FallbackValue='-'}" />
+                    </StackPanel>
+                    <StackPanel Margin="25,10" Orientation="Horizontal">
+                        <TextBlock Margin="0,0,5,0" Text="{x:Static resources:MonsterDetailsView.XP}" />
+                        <TextBlock Text="{Binding XP, FallbackValue='-'}" />
+                    </StackPanel>
+                </StackPanel>
+
+                <GroupBox
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    MinWidth="200"
+                    HorizontalAlignment="Right"
+                    DataContext="{Binding Monster.AbilityScores, UpdateSourceTrigger=PropertyChanged}"
+                    Header="{x:Static resources:MonsterDetailsView.AbilityScores}">
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="0,0,5,0" Text="{x:Static resources:MonsterDetailsView.AbilityScores_Charisma}" />
+                            <TextBlock Text="{Binding Charisma, FallbackValue='-'}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="0,0,5,0" Text="{x:Static resources:MonsterDetailsView.AbilityScores_Constitution}" />
+                            <TextBlock Text="{Binding Constitution, FallbackValue='-'}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="0,0,5,0" Text="{x:Static resources:MonsterDetailsView.AbilityScores_Dexterity}" />
+                            <TextBlock Text="{Binding Dexterity, FallbackValue='-'}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="0,0,5,0" Text="{x:Static resources:MonsterDetailsView.AbilityScores_Intelligence}" />
+                            <TextBlock Text="{Binding Intelligence, FallbackValue='-'}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="0,0,5,0" Text="{x:Static resources:MonsterDetailsView.AbilityScores_Strength}" />
+                            <TextBlock Text="{Binding Strength, FallbackValue='-'}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="0,0,5,0" Text="{x:Static resources:MonsterDetailsView.AbilityScores_Wisdom}" />
+                            <TextBlock Text="{Binding Wisdom, FallbackValue='-'}" />
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+
+</UserControl>

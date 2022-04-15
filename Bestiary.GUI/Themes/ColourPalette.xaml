@@ -1,0 +1,40 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="View.Background" Color="Gainsboro" />
+    <SolidColorBrush x:Key="View.DarkBackground" Color="#c7a5a5" />
+    <SolidColorBrush x:Key="View.Foreground" Color="Black" />
+
+
+    <SolidColorBrush x:Key="Control.Background" Color="Gainsboro" />
+    <SolidColorBrush x:Key="Control.Foreground" Color="Black" />
+    <SolidColorBrush x:Key="Control.Border" Color="DarkRed" />
+
+
+    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#c7a5a5" />
+    <SolidColorBrush x:Key="Button.MouseOver.Foreground" Color="Black" />
+    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="DarkRed" />
+
+    <SolidColorBrush x:Key="Button.Pressed.Background" Color="#c7a5a5" />
+    <SolidColorBrush x:Key="Button.Pressed.Foreground" Color="Black" />
+    <SolidColorBrush x:Key="Button.Pressed.Border" Color="DarkRed" />
+
+
+    <SolidColorBrush x:Key="TextBox.CaretBrush" Color="Black" />
+    <SolidColorBrush x:Key="TextBox.SelectionBrush" Color="Gainsboro" />
+
+    <SolidColorBrush x:Key="TextBox.MouseOver.Background" Color="White" />
+    <SolidColorBrush x:Key="TextBox.MouseOver.Foreground" Color="Black" />
+    <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="DarkRed" />
+
+    <SolidColorBrush x:Key="TextBox.Pressed.Background" Color="White" />
+    <SolidColorBrush x:Key="TextBox.Pressed.Foreground" Color="Black" />
+    <SolidColorBrush x:Key="TextBox.Pressed.Border" Color="DarkRed" />
+
+
+    <SolidColorBrush x:Key="ComboBoxItem.MouseOver.Background" Color="#c7a5a5" />
+    <SolidColorBrush x:Key="ComboBoxItem.MouseOver.Foreground" Color="white" />
+
+    <SolidColorBrush x:Key="ComboBoxItem.Selected.Background" Color="#c7a5a5" />
+    <SolidColorBrush x:Key="ComboBoxItem.Selected.Foreground" Color="Black" />
+
+</ResourceDictionary>

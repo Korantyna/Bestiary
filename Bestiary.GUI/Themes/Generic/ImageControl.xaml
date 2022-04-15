@@ -1,0 +1,24 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Bestiary.GUI.Controls">
+
+    <ControlTemplate x:Key="ImageControlTemplate" TargetType="{x:Type controls:ImageControl}">
+        <Viewbox
+            Width="{TemplateBinding Width}"
+            Height="{TemplateBinding Height}"
+            RenderTransformOrigin="{TemplateBinding RenderTransformOrigin}"
+            Stretch="{TemplateBinding Stretch}"
+            StretchDirection="{TemplateBinding StretchDirection}">
+            <ContentPresenter Content="{TemplateBinding Content}" Focusable="False" />
+            <Viewbox.RenderTransform>
+                <RotateTransform x:Name="ImageRotationAngle" Angle="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=RotationAngle}" />
+            </Viewbox.RenderTransform>
+        </Viewbox>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type controls:ImageControl}">
+        <Setter Property="Template" Value="{StaticResource ImageControlTemplate}" />
+    </Style>
+
+</ResourceDictionary>

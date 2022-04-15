@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ColourPalette.xaml" />
+        <ResourceDictionary Source="Styles/ButtonDefaultStyle.xaml" />
+        <ResourceDictionary Source="Styles/ComboBoxDefaultStyle.xaml" />
+        <ResourceDictionary Source="Styles/ScrollViewerDefaultStyle.xaml" />
+        <ResourceDictionary Source="Styles/ScrollBarDefaultStyle.xaml" />
+        <ResourceDictionary Source="Styles/GroupBoxDefaultStyle.xaml" />
+        <ResourceDictionary Source="Styles/ViewStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

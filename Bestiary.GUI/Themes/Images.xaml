@@ -1,0 +1,29 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Bestiary.GUI.Controls">
+
+    <ControlTemplate x:Key="Image_Arrow" TargetType="{x:Type controls:ImageControl}">
+        <Image
+            Width="{TemplateBinding Width}"
+            Height="{TemplateBinding Height}"
+            RenderTransformOrigin="{TemplateBinding RenderTransformOrigin}"
+            Stretch="{TemplateBinding Stretch}"
+            StretchDirection="{TemplateBinding StretchDirection}">
+            <Image.Source>
+                <DrawingImage>
+                    <DrawingImage.Drawing>
+                        <GeometryDrawing
+                            x:Name="ArrowImage"
+                            Brush="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Foreground}"
+                            Geometry="F1 M 562.314,517.479L 562.314,521.943C 562.314,523.141 562.878,524.269 563.838,524.985L 583.029,539.341C 583.809,539.925 583.809,541.097 583.029,541.679L 563.838,556.034C 562.878,556.753 562.313,557.881 562.313,559.078L 562.313,563.542C 562.313,564.777 563.723,565.482 564.711,564.742L 595.189,541.946C 596.147,541.229 596.147,539.791 595.189,539.075L 564.713,516.279C 563.723,515.537 562.314,516.245 562.314,517.479 Z" />
+                    </DrawingImage.Drawing>
+                </DrawingImage>
+            </Image.Source>
+            <Image.RenderTransform>
+                <RotateTransform x:Name="ImageRotationAngle" Angle="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=RotationAngle}" />
+            </Image.RenderTransform>
+        </Image>
+    </ControlTemplate>
+
+</ResourceDictionary>
